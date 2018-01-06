@@ -1,0 +1,58 @@
+.jumbotron {
+    background-image: url("../img/bglines.png");
+    background-size: cover;
+  }
+
+  .custom-bg {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#53b6ce), to(#3d4a70)); 
+
+  }
+  .custom-black-bg {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#2e2e2e), to(#1d1d1d)); 
+
+  }
+
+  .black-bg {
+    background-color: #232323;
+  }
+
+  .footer-color {
+    background-color: black;
+  }
+.bg-picture-map {
+  background-image: url("../img/map45.png");
+  background-size: cover;
+}
+  .bg-light-lines {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#53b6ce), to(#3d4a70));
+  
+  }
+.hand,
+svg {
+  cursor: hand;
+  cursor: pointer;
+}
+/*GROW*/
+.grow img {
+  height: 200px;
+  width: 200px;
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+ 
+.grow img:hover {
+  width: 270px;
+  height: 270px;
+  
+}
+
+#icon{ transition: 1s; }
+
+ svg:hover #icon { fill: #53b6ce; }
+
+.wrapperrr {
+  overflow-x: hidden !important;
+  }

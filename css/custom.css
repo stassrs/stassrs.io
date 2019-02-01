@@ -700,9 +700,17 @@ Bonus Style Project
    box-shadow: 4px 4px 15px rgba(40, 41, 44, 0.7);
 
 }
+
+.slide_mobile {
+  display: none;
+}
 @media (max-width: 800px) {
   .nav-bonus_bg{
     background-color:#28292C;
     margin-top: -0.250em;
   }
+  .slide_mobile_1 {
+    display: block;
+    
+    }
 }

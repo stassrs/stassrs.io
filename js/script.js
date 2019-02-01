@@ -10,6 +10,7 @@ if ($(window).width() < 800) {
 	$('.rem_mb_bg').removeClass('bonus_bg');
 	$('.nav_expand').addClass('mb-4');
 	$('.mobile_center').removeClass('ml-2');
+	$('.nav-color').removeClass('bonus_nav');
 
 }
 

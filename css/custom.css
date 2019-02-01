@@ -408,11 +408,13 @@ Media Queries
   .jumbotron {
     background-image: url("../svg/mobile.svg");
     background-size: cover;
+    margin-left:-0.125em;
   }
 
   .jumbotron_2 {
     background-image: url("../svg/mobile_2.svg");
     background-size: cover;
+    margin-left:-0.125em;
   }
 
   .project_mb_view {

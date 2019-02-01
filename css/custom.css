@@ -1,0 +1,706 @@
+/* -------------------------------- 
+Base Styling
+-------------------------------- */
+*{
+  font-family: 'Noto Sans', sans-serif;
+
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* unvisited link */
+.custom_link a:link {
+  color: #04A8D5;
+  font-weight: bold;
+}
+
+/* visited link */
+.custom_link a:visited {
+  color: #04A8D5;
+}
+
+/* mouse over link */
+.custom_link a:hover {
+  color: #3301A0;
+  text-decoration: none;
+  text-shadow: 2px 5px 40px rgba(92, 47, 132, 0.2);
+  -webkit-transition: all .8s ease-in-out;
+  transition: all .8s ease-in-out;
+}
+
+/* selected link */
+.custom_link a:active {
+  color: blue;
+}
+
+/* -------------------------------- 
+Animation
+-------------------------------- */
+@keyframes fade-in {
+  from {opacity: 0; transform: scale(.7,.7)}
+  to {opacity: 1;}
+}
+.fade-in-element {
+animation: fade-in 1.4s;
+}
+.hidden {
+  opacity: 0;
+}
+/* -------------------------------- 
+Navbar
+-------------------------------- */
+.nav-color{
+    background-color:transparent;
+}
+
+.nav-bonus{
+  background-color:transparent;
+}
+.text-space {
+  letter-spacing: 0.05em;
+}
+.nav-font{
+    color: black;
+    font-size: 1.2rem;
+}
+.margin_between {
+  margin-left: .3em;
+  margin-right: .3em;
+  font-size: .8em;
+  font-family: 'Noto Sans', sans-serif;
+}
+/* -------------------------------- 
+Navbar END
+-------------------------------- */
+
+.jumbotron {
+    background-size: cover;
+    background-image: url("../svg/jumbo_test_2.svg");
+    background-color: #FCFAFF;
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+    margin-top: -0.063em;
+  }
+
+  .jumbotron_2 {
+    background-size: cover;
+    background-image: url("../svg/jumbo_test.svg");
+    background-color: #FCFAFF;
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+    margin-bottom: -0.125em;
+  }
+
+  .custom_text_jumbo {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    width:90%;
+  }
+  .custom_head_text {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+
+/* -------------------------------- 
+Services Styling
+-------------------------------- */
+  .service_pics {
+    height: auto;
+    width: 170px;
+  }
+/* -------------------------------- 
+Lines Above Headlines
+-------------------------------- */
+.line_jumbo {
+  margin-right: 1em;
+  border: 2px solid #424194;
+  margin-right: 20%;
+  }
+  .line_service {
+    border: 5px solid #424194;
+    margin-right: 85%;
+  }
+  .line_service_2 {
+    border: 5px solid white;
+    margin-right: 85%;
+  }
+
+  .custom_shadow {
+    box-shadow: 12px 9px 1px rgba(0, 0, 0, 0.07);
+  }
+/* -------------------------------- 
+Blocks Backgrounds
+-------------------------------- */
+   .service_bg {
+     background-color: #28292C;
+   } 
+   .works_bg_1 {
+    background-color: #FCFAFF;
+    background-image: url("../svg/222.svg");
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+    background-size: cover;
+  }
+  .works_bg {
+    background-color: #FCFAFF;
+    background-image: url("../svg/jumbo_4.svg");
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+    background-size: cover;
+  }
+
+   .service_font {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.4em;
+    width: 80%;
+   }
+  
+  .button_special{
+      border-radius: 30pt;
+  }
+/* -------------------------------- 
+Hover Navigation
+-------------------------------- */
+.hover-nav > a {
+  position: relative;
+  color:  white;
+  text-decoration: none;
+}
+
+.hover-nav > a:hover {
+  color: white;
+}
+
+.hover-nav > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color:  #3301A0;;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+  .hover-nav > a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+/* -------------------------------- 
+Hover Navigation END
+-------------------------------- */
+/* -------------------------------- 
+buttons hover
+-------------------------------- */
+
+
+.slide_mobile {
+    display: none;
+}
+.about_bg {
+    background-color: white;
+  }
+
+  .custom_svg_woman {
+    width: auto;
+    height: 33em;
+  }
+
+/* -------------------------------- 
+buttons_hover
+-------------------------------- */
+  .button_hover{
+    -webkit-transition: all .6s ease-in-out;
+    transition: all .6s ease-in-out;
+    border-radius: 30px;
+    background-color: #3301A0;
+    color: white;
+    box-shadow: 4px 4px 15px rgba(51, 1, 160, 0.3);
+    border-color: #3301A0;
+    color: white;
+    font-weight: 650;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    padding: 1.2em;
+    padding-right: 2em;
+    padding-left: 2em;
+}
+
+.button_hover:hover {
+    -webkit-transform:scale(1.1); /* Safari and Chrome */
+    -moz-transform:scale(1.1); /* Firefox */
+    -ms-transform:scale(1.1); /* IE 9 */
+    -o-transform:scale(1.1); /* Opera */
+     transform:scale(1.1);
+     color: white;
+     background-color: #3301A0;
+     border-color: #3301A0;
+     box-shadow: 4px 4px 15px rgba(51, 1, 160, 0.6);
+
+}
+/* -------------------------------- 
+buttons hover END
+-------------------------------- */
+/* -------------------------------- 
+icons_hover
+-------------------------------- */
+.social_hover_insta {
+  -webkit-transition: all .6s ease-in-out;
+  transition: transform all .6s ease-in-out;
+  box-shadow: 2px 5px 40px rgba(211, 56, 97, 0.5);
+  border-radius:100px;
+}
+
+.social_hover_insta:hover {
+  -webkit-transform:scale(1.1); /* Safari and Chrome */
+  -moz-transform:scale(1.1); /* Firefox */
+  -ms-transform:scale(1.1); /* IE 9 */
+  -o-transform:scale(1.1); /* Opera */
+   transform:scale(1.1);
+   box-shadow: 2px 5px 40px rgba(211, 56, 97, 1)
+}
+
+.social_hover_telega {
+  -webkit-transition: all .6s ease-in-out;
+  transition: transform all .6s ease-in-out;
+  box-shadow: 2px 5px 40px rgba(65, 180, 230, .5);
+  border-radius:100px;
+}
+
+.social_hover_telega:hover {
+  -webkit-transform:scale(1.1); /* Safari and Chrome */
+  -moz-transform:scale(1.1); /* Firefox */
+  -ms-transform:scale(1.1); /* IE 9 */
+  -o-transform:scale(1.1); /* Opera */
+   transform:scale(1.1);
+   box-shadow: 2px 5px 40px rgba(65, 180, 230, 1);
+}
+
+.phone_hover {
+  -webkit-transition: all .6s ease-in-out;
+  transition: transform all .6s ease-in-out;
+  box-shadow: 2px 5px 40px rgba(44, 115, 176, 0.5);
+  border-radius:100px;
+}
+
+.phone_hover:hover {
+  -webkit-transform:scale(1.1); /* Safari and Chrome */
+  -moz-transform:scale(1.1); /* Firefox */
+  -ms-transform:scale(1.1); /* IE 9 */
+  -o-transform:scale(1.1); /* Opera */
+   transform:scale(1.1);
+   box-shadow: 2px 5px 40px rgba(44, 115, 176, 1);
+}
+/* -------------------------------- 
+icons hover END
+-------------------------------- */
+/* -------------------------------- 
+projects_hover
+-------------------------------- */
+.hovereffect {
+  width:100%;
+  height:100%;
+  float:left;
+  overflow:hidden;
+  position:relative;
+  text-align:center;
+  cursor:default;
+  }
+  
+  .hovereffect .overlay {
+  width:100%;
+  height:100%;
+  position:absolute;
+  overflow:hidden;
+  top:0;
+  left:0;
+  opacity:0;
+  background-color:rgba(0,0,0,0.5);
+  -webkit-transition:all .4s ease-in-out;
+  transition:all .4s ease-in-out
+  }
+  
+  .hovereffect img {
+  display:block;
+  position:relative;
+  width: calc(100% + 1.250em);
+  -webkit-transition:all .4s linear;
+  transition:all .4s linear;
+  }
+  
+  
+  .hovereffect a.info {
+  text-decoration:none;
+  border:1px solid #fff;
+  border-radius: 30px;
+  margin: auto;
+  padding-right: 2em;
+  padding-left: 2em;
+  background-color:transparent;
+  opacity:0;
+  filter:alpha(opacity=0);
+  -webkit-transition:all .2s ease-in-out;
+  transition:all .2s ease-in-out;
+  border-radius: 30px;
+  color: white;
+  font-weight: 650;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  padding: 1em;
+  }
+  
+  
+  .hovereffect:hover img {
+  -ms-transform:scale(1.2);
+  -webkit-transform:scale(1.2);
+  transform:scale(1.2);
+  }
+  
+  .hovereffect:hover .overlay {
+  opacity:1;
+  filter:alpha(opacity=100);
+  }
+  
+  .hovereffect:hover h2,.hovereffect:hover a.info {
+  opacity:1;
+  filter:alpha(opacity=100);
+  -ms-transform:translatey(0);
+  -webkit-transform:translatey(0);
+  transform:translatey(0);
+  }
+  
+  .hovereffect:hover a.info {
+  -webkit-transition-delay:.2s;
+  transition-delay:.2s;
+  }
+/* -------------------------------- 
+projects_hover END
+-------------------------------- */
+/* -------------------------------- 
+zoom for buttons
+-------------------------------- */
+.zoom {
+  transition: transform .6s ease-in-out; /* Animation */
+
+}
+.ham {
+  color:#3301A0;
+}
+/* .pop_form {
+ width: auto;
+ height: 600px;
+} */
+/* -------------------------------- 
+Media Queries
+-------------------------------- */
+@media (max-width: 800px) {
+  .jumbotron {
+    background-image: url("../svg/mobile.svg");
+    background-size: cover;
+  }
+
+  .jumbotron_2 {
+    background-image: url("../svg/mobile_2.svg");
+    background-size: cover;
+  }
+
+  .project_mb_view {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  .project_cards_mb {
+    margin-bottom: 3em;
+  }
+
+.one_card_mb {
+  margin-top:1em;
+}
+.about_mb {
+font-weight: 500;
+font-family: 'Noto Sans', sans-serif;
+
+}
+  .center_objects {
+    align-content: center;
+  }
+
+  .logo_white {
+    fill:white;
+  }
+  .mobile_text {
+    color:white;
+  }
+ .service_h {
+   font-size: 2.7em;
+   width: 100%;
+
+ }
+ .column_m {
+   margin-bottom: 4em;
+ }
+ .line_jumbo {
+  margin-right: 1em;
+  border: 3px solid #3301A0;
+  box-shadow: 2px 5px 40px rgba(66, 65, 148, 0.2);
+  margin-right: 7%;
+ }
+ .sub_bg {
+  background-image: url("../svg/mobile.svg");
+  background-size: cover;
+ }
+ .custom_svg_woman {
+  width: auto;
+  height: 18em;
+}
+.bonus_margin_block {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+.bonus_margin_block_2 {
+  margin-bottom: 3em;
+}
+.bonus_margin_block_3 {
+  margin-top: -5em;
+}
+.develop_mb {
+  color: white;
+}
+
+}
+/* -------------------------------- 
+Media Queries END
+-------------------------------- */
+/* -------------------------------- 
+Form Styling
+-------------------------------- */
+.head_form {
+  background-color: #3301A0;
+}
+.button_form_style {
+  color: white;
+  -webkit-transition: all .6s ease-in-out;
+  transition: all .6s ease-in-out;
+
+}
+.button_form_style:hover {
+  color: white;
+  
+}
+.form_custom_style {
+  border-radius: 0px;
+  border: none;
+  margin:0;
+}
+/* -------------------------------- 
+Form Styling END
+-------------------------------- */
+
+.checkbox_custom:checked {
+  background-color: #3301A0;
+}
+
+
+
+#myform{transition:ease 2s!important; opacity:1;}
+#messege{transition: ease 2s!important;}
+
+
+/* -------------------------------- 
+Bonus Style Project
+-------------------------------- */
+.bonus_bg {
+  background-image: url("../img/project_1.jpg");
+  width: 100%;
+  height: 100%;
+  border-radius: 0%;
+  background-size: cover;
+  padding-bottom: 40em;
+  margin-top: -0.250em;
+  
+}
+.bonus_nav {
+  background: rgba(40, 41, 44, .4);
+}
+.goal_text {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 500;
+  font-size: 2.2em;
+  color:black; 
+}
+.black_t {
+  color: black;
+}
+.goal_p {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: bold;
+  color:#424194; 
+  font-size: 2em;
+}
+.goal_p_2 {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: bold;
+  color:#424194; 
+  font-size: 4em;
+}
+
+.buttton_g {
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+
+.goal_p_3 {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: bold;
+  color:white; 
+  font-size: 4em;
+}
+
+.text_p {
+  font-family: 'Noto Sans', sans-serif;
+  color:black; 
+  font-size: 1.5em;
+}
+.text_p_2 {
+  font-family: 'Noto Sans', sans-serif;
+  color:black; 
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+.line_service_3 {
+  border: 5px solid #424194;
+  margin-right: 80%;
+}
+
+.bonus_01_bg {
+  background-color: transparent;
+  background-image: url("../svg/bonus_01_bg.svg");
+  width: 100%;
+  height: 100%;
+  border-radius: 0%;
+  background-size: cover;
+  margin-left: -0.250em;
+  
+}
+.bonus_02_bg {
+  background-color: transparent;
+  background-image: url("../svg/bonus_02_bg.svg");
+  width: 100%;
+  height: 100%;
+  border-radius: 0%;
+  background-size: cover;
+  margin-right: -0.250em;
+  
+}
+
+.bonus_whole_bg {
+  background-color: #FCFAFF;
+  background-image: url("../svg/11111.svg");
+  width: 100%;
+  height: 100%;
+  border-radius: 0%;
+  background-size: cover;
+}
+.ham {
+  fill:white;
+}
+
+/* Bullets */
+.bullets_list {
+  list-style: none;
+ }
+ .bullets_list li {
+  background: url("../svg/bullet.svg") no-repeat top left;
+  background-position: 0 5px;
+  line-height: 1.5625;
+  padding: 0 0 4px 30px;
+  margin-left: -2.0em;
+ }
+
+ .text_bullet {
+  font-family: 'Noto Sans', sans-serif;
+  color:black; 
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+ /* Bullets end */
+
+ .links {
+   text-decoration: none;
+   transition: all .2s;
+   font-weight: bold;
+
+ }
+ .links:hover {
+  color: #3301A0;
+
+}
+
+
+.button_bonus{
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  border-radius: 30px;
+  background-color: #3301A0;
+  color: white;
+  box-shadow: 4px 4px 15px rgba(51, 1, 160, 0.3);
+  border-color: #3301A0;
+  color: white;
+  font-weight: 650;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  padding: 1.2rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.button_bonus:hover {
+   color: white;
+   background-color: #3301A0;
+   border-color: #3301A0;
+   box-shadow: 4px 4px 15px rgba(51, 1, 160, 0.7);
+
+}
+.button_bonus_2{
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  border-radius: 30px;
+  background-color: #28292C;
+  color: white;
+  box-shadow: 4px 4px 15px rgba(40, 41, 44, 0.3);
+  border-color: #28292C;
+  color: white;
+  font-weight: 650;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  padding: 1.2rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.button_bonus_2:hover {
+   color: white;
+   background-color: #28292C;
+   border-color: #28292C;
+   box-shadow: 4px 4px 15px rgba(40, 41, 44, 0.7);
+
+}
+@media (max-width: 800px) {
+  .nav-bonus{
+    background-color:#28292C;
+  }
+}

@@ -701,7 +701,7 @@ Bonus Style Project
 
 }
 @media (max-width: 800px) {
-  .nav-color{
+  .nav-bonus_bg{
     background-color:#28292C;
     margin-top: -0.250em;
   }

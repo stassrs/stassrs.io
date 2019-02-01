@@ -531,6 +531,7 @@ Bonus Style Project
 }
 .bonus_nav {
   background: rgba(40, 41, 44, .4);
+  
 }
 .goal_text {
   font-family: 'Noto Sans', sans-serif;
@@ -700,7 +701,8 @@ Bonus Style Project
 
 }
 @media (max-width: 800px) {
-  .nav-bonus{
+  .nav-color{
     background-color:#28292C;
+    margin-top: -0.250em;
   }
 }

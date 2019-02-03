@@ -14,25 +14,118 @@ if ($(window).width() < 800) {
 
 }
 
-   $("#register-submit").click( function(){
-
-	$('.navbar-nav>li>a').on('click', function(){
-		$('.navbar-collapse').collapse('hide');
+$("#register-submit").click( function(){
+	var nametemp = 0;
+	var mailtemp = 0;
+	var phonetemp = 0;
+	
+	if ($("input[name='name']").val() === ''){
+		//$("input[name='name']").css({"border-color":"red", "transition":"ease 1s"});
+		$("input[name='name']").attr("placeholder","Введите Ваше Имя");
+		$("input[name='name']").addClass("is-invalid");
+		nametemp = 0;
+	} else {
+			//$("input[name='name']").css({"border-color":"#DDD", "transition":"ease 1s"});
+				$("input[name='name']").addClass("is-valid");
+			nametemp = 1;
+	}
+	
+	if ($("input[name='phone']").val() === ''){
+		//$("input[name='phone']").css({"border-color":"red", "transition":"ease 1s"});
+		$("input[name='phone']").attr("placeholder","Введите Ваше Телефон");
+			$("input[name='phone']").addClass("is-invalid");
+		phonetemp = 0;
+	} else {
+		if ($("input[name='phone']").is(":invalid")){
+			$("input[name='phone']").addClass("is-invalid");
+			phonetemp = 0;
+	} else {
+			$("input[name='phone']").addClass("is-valid");
+			phonetemp = 1;
+	} 
+			//$("input[name='phone']").css({"border-color":"#DDD", "transition":"ease 1s"});
+		
+	}
+	
+	
+	if ($("input[name='email']").val() === ''){
+		//$("input[name='email']").css({"border-color":"red", "transition":"ease 1s"});
+		$("input[name='email']").attr("placeholder","Введите Ваше E-mail");
+			$("input[name='email']").addClass("is-invalid");
+	
+		mailtemp = 0;
+	} else {
+			
+			if(isValidEmailAddress($("input[name='email']").val())){
+					//$("input[name='email']").css({"border-color":"#DDD", "transition":"ease 1s"});
+						$("input[name='email']").addClass("is-valid");
+	
+			var mailtemp=1;
+			} else {
+		
+			//$("input[name='email']").css({"border-color":"red", "transition":"ease 1s"});
+				$("input[name='email']").addClass("is-invalid");
+	var mailtemp=0;
+	
+			}
+	
+			
+	}
+	
+	
+	if ((nametemp == 1) && (phonetemp == 1) && (mailtemp == 1)){
+	
+	$("#Timestamp").val(new Date($.now()));
+	
+			$("#myform").ajaxForm({ url: 'https://script.google.com/macros/s/AKfycbyZZWXjimDTA3aN5ToeXhcYspvLe1P-1wgoVCWt_w/exec', type: 'post' });
+		 $("#thankname").text($("input[name='name']").val());
+			 $("#myform").fadeOut(3600).hide().css("opacity","0");
+			 $("#messege").show().fadeIn(3600).css("opacity","1");
+	
+			/*$("#myform").hide().delay(360);*/
+			 
+		 /* $("#messege").show().delay(360);*/
+	
+	} else { return(false);}
+			
+			});
+	
+	$( "input[name='email']" ).change(function() {
+	//$("input[name='email']").css({"border-color":"#DDD", "transition":"ease 1s"});
+	//$("input[name='email']").addClass("is-valid");
+	
+	if ($("input[name='email']").is(":invalid")){
+	$("input[name='email']").addClass("is-invalid");
+	} else {
+	$("input[name='email']").addClass("is-valid");
+	} 
+	
 	});
-
-$("#Timestamp").val(new Date($.now()));
-
-    $("#myform").ajaxForm({ url: 'https://script.google.com/macros/s/AKfycbyZZWXjimDTA3aN5ToeXhcYspvLe1P-1wgoVCWt_w/exec', type: 'post' });
-   $("#thankname").text($("input[name='name']").val());
-     $("#myform").fadeOut(3600).hide().css("opacity","0");
-     $("#messege").show().fadeIn(3600).css("opacity","1");
-
-    /*$("#myform").hide().delay(360);*/
-     
-   /* $("#messege").show().delay(360);*/
-
-
-    });
+	
+	$( "input[name='name']" ).change(function() {
+	//$("input[name='name']").css({"border-color":"#DDD", "transition":"ease 1s"});
+	$("input[name='name']").addClass("is-valid");
+	});
+	
+	
+	$( "input[name='phone']" ).change(function() {
+	//$("input[name='phone']").css({"border-color":"#DDD", "transition":"ease 1s"});
+	
+	if ($("input[name='phone']").is(":invalid")){
+	$("input[name='phone']").addClass("is-invalid");
+	} else {
+	$("input[name='phone']").addClass("is-valid");
+	} 
+	
+	
+	
+	});
+	
+	function isValidEmailAddress(emailAddress) {
+			var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+			return pattern.test(emailAddress);
+	}
+	
 
 //Form
 (function() {

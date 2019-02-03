@@ -32,7 +32,7 @@ $("#register-submit").click( function(){
 	
 	if ($("input[name='phone']").val() === ''){
 		//$("input[name='phone']").css({"border-color":"red", "transition":"ease 1s"});
-		$("input[name='phone']").attr("placeholder","Введите Ваше Телефон");
+		$("input[name='phone']").attr("placeholder","Введите Ваш Телефон");
 			$("input[name='phone']").addClass("is-invalid");
 		phonetemp = 0;
 	} else {
@@ -50,7 +50,7 @@ $("#register-submit").click( function(){
 	
 	if ($("input[name='email']").val() === ''){
 		//$("input[name='email']").css({"border-color":"red", "transition":"ease 1s"});
-		$("input[name='email']").attr("placeholder","Введите Ваше E-mail");
+		$("input[name='email']").attr("placeholder","Введите Ваш E-mail");
 			$("input[name='email']").addClass("is-invalid");
 	
 		mailtemp = 0;
@@ -95,16 +95,24 @@ $("#register-submit").click( function(){
 	//$("input[name='email']").addClass("is-valid");
 	
 	if ($("input[name='email']").is(":invalid")){
-	$("input[name='email']").addClass("is-invalid");
+	$("input[name='email']").removeClass("is-valid").addClass("is-invalid");
 	} else {
-	$("input[name='email']").addClass("is-valid");
+	$("input[name='email']").removeClass("is-invalid").addClass("is-valid");
 	} 
 	
 	});
 	
 	$( "input[name='name']" ).change(function() {
 	//$("input[name='name']").css({"border-color":"#DDD", "transition":"ease 1s"});
-	$("input[name='name']").addClass("is-valid");
+	$("input[name='name']").removeClass("is-invalid").addClass("is-valid");
+	
+	if ($("input[name='name']").val().length == 0 ){
+	$("input[name='name']").removeClass("is-valid").addClass("is-invalid");
+	} else {
+	$("input[name='name']").removeClass("is-invalid").addClass("is-valid");
+	} 
+	
+	
 	});
 	
 	
@@ -112,9 +120,9 @@ $("#register-submit").click( function(){
 	//$("input[name='phone']").css({"border-color":"#DDD", "transition":"ease 1s"});
 	
 	if ($("input[name='phone']").is(":invalid")){
-	$("input[name='phone']").addClass("is-invalid");
+	$("input[name='phone']").removeClass("is-valid").addClass("is-invalid");
 	} else {
-	$("input[name='phone']").addClass("is-valid");
+	$("input[name='phone']").removeClass("is-invalid").addClass("is-valid");
 	} 
 	
 	

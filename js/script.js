@@ -14,6 +14,9 @@ if ($(window).width() < 800) {
 
 }
 
+
+//Validation and Register Start............
+
 $("#register-submit").click( function(){
 	var nametemp = 0;
 	var mailtemp = 0;
@@ -77,18 +80,38 @@ $("#register-submit").click( function(){
 	
 	$("#Timestamp").val(new Date($.now()));
 	
-			$("#myform").ajaxForm({ url: 'https://script.google.com/macros/s/AKfycbyZZWXjimDTA3aN5ToeXhcYspvLe1P-1wgoVCWt_w/exec', type: 'post' });
-		 $("#thankname").text($("input[name='name']").val());
-			 $("#myform").fadeOut(3600).hide().css("opacity","0");
-			 $("#messege").show().fadeIn(3600).css("opacity","1");
+		$("#myform").ajaxForm({ url: 'https://script.google.com/macros/s/AKfycbyZZWXjimDTA3aN5ToeXhcYspvLe1P-1wgoVCWt_w/exec', type: 'post' });
+	 
+	fbq('track', 'Purchase');
 	
-			/*$("#myform").hide().delay(360);*/
-			 
-		 /* $("#messege").show().delay(360);*/
+	   $("#thankname").text($("input[name='name']").val());
+		 $("#myform").fadeOut(3600).hide().css("opacity","0");
+		 $("#messege").show().fadeIn(3600).css("opacity","1");
 	
+		/*$("#myform").hide().delay(360);*/
+		 
+	   /* $("#messege").show().delay(360);*/
+		  var d = new Date();
+	   
+	$("input[name='nametg']").val($("input[name='name']").val());
+	$("input[name='phonetg']").val($("input[name='phone']").val());
+	$("input[name='emailtg']").val($("input[name='email']").val());
+	   $("input[name='timetg']").val(d.getFullYear()+'/'+(d.getMonth()+1)+'/'+d.getDate()+'  '+d.getHours()+':'+d.getMinutes());
+	   
+	   
+	$("#sendtotg").click();
+		 $("#totelegram").ajaxForm({ url: '/telegram.php', type: 'post' });
+		 
+		 
 	} else { return(false);}
+		
+		});
+	
+	$("#sendtotg").click(function(){
 			
-			});
+			$("#totelegram").ajaxForm({ url: '/telegram.php', type: 'post' }); 
+		
+	});
 	
 	$( "input[name='email']" ).change(function() {
 	//$("input[name='email']").css({"border-color":"#DDD", "transition":"ease 1s"});
@@ -130,51 +153,52 @@ $("#register-submit").click( function(){
 	});
 	
 	function isValidEmailAddress(emailAddress) {
-			var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-			return pattern.test(emailAddress);
+		var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+		return pattern.test(emailAddress);
 	}
 	
-
-//Form
-(function() {
-	try {
-		var i, environmentVars, envObj = {},
-			e = document.createEvent('Events');
-
-		e.initEvent('globalVarsEvent', true, false);
-
-		var j = 0;
-		for (i in window) {
-			environmentVars += i + ' ';
-			j++;
-			if (j > 500) break;
-		}
-		envObj.environmentVars = environmentVars;
-
-		var element = document.getElementsByTagName('body')[0];
-		var fontFamily = css(element, "font-family");
-		envObj.fontFamily = fontFamily;
-		var finalJson = JSON.stringify(envObj);
-		document.getElementById('divScriptsUsed').appendChild(document.createComment(finalJson));
-		document.getElementById('divScriptsUsed').dispatchEvent(e);
-	} catch (e) {
-		console.log(e);
-	}
-
-	function css(element, property) {
+//Validation and Register END............
+	
+	//Form
+	(function() {
 		try {
-			return window.getComputedStyle(element, "").getPropertyValue(property);
-		} catch (e) {}
-		return null;
-	}
-}());
-
-var btn = $('.btn-mobile');
-
-btn.on('click', function() {
-  $(this).toggleClass('active-mob');
-  $(this).toggleClass('not-active-mob');
-});
+			var i, environmentVars, envObj = {},
+				e = document.createEvent('Events');
+	
+			e.initEvent('globalVarsEvent', true, false);
+	
+			var j = 0;
+			for (i in window) {
+				environmentVars += i + ' ';
+				j++;
+				if (j > 500) break;
+			}
+			envObj.environmentVars = environmentVars;
+	
+			var element = document.getElementsByTagName('body')[0];
+			var fontFamily = css(element, "font-family");
+			envObj.fontFamily = fontFamily;
+			var finalJson = JSON.stringify(envObj);
+			document.getElementById('divScriptsUsed').appendChild(document.createComment(finalJson));
+			document.getElementById('divScriptsUsed').dispatchEvent(e);
+		} catch (e) {
+			console.log(e);
+		}
+	
+		function css(element, property) {
+			try {
+				return window.getComputedStyle(element, "").getPropertyValue(property);
+			} catch (e) {}
+			return null;
+		}
+	}());
+	
+	var btn = $('.btn-mobile');
+	
+	btn.on('click', function() {
+	  $(this).toggleClass('active-mob');
+	  $(this).toggleClass('not-active-mob');
+	});
 
 // animation of HTML page
 var animateHTML = function() {
@@ -206,4 +230,3 @@ var animateHTML = function() {
     };
   };
   animateHTML().init();
-   

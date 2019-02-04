@@ -100,7 +100,7 @@ $("#register-submit").click( function(){
 	   
 	   
 	$("#sendtotg").click();
-		 $("#totelegram").ajaxForm({ url: '/telegram.php', type: 'post' });
+		 $("#totelegram").ajaxForm({ url: 'https://socialcircle.com.ua/telegram.php', type: 'post' });
 		 
 		 
 	} else { return(false);}
@@ -109,7 +109,7 @@ $("#register-submit").click( function(){
 	
 	$("#sendtotg").click(function(){
 			
-			$("#totelegram").ajaxForm({ url: '/telegram.php', type: 'post' }); 
+			$("#totelegram").ajaxForm({ url: 'https://socialcircle.com.ua/telegram.php', type: 'post' }); 
 		
 	});
 	
